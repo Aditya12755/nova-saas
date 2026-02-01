@@ -54,7 +54,7 @@ export default function Home() {
         id="contact"
         className="mt-20 bg-white text-black p-6 rounded-xl w-full max-w-md"
       >
-        <h2 className="text-center font-semibold mb-4">Contact / Login</h2>
+        <h2 className="text-center font-semibold mb-4">Contact Me</h2>
 
         <input
           className="w-full border p-2 mb-3 rounded"
