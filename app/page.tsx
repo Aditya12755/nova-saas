@@ -91,11 +91,11 @@ export default function Home() {
       >
         <h2 className="text-center font-semibold mb-4">Contact Me</h2>
 
-        {submitted ? (
-          <p className="text-green-600 text-center">
-            ✅ Message sent successfully
-          </p>
-        ) : (
+         {submitted && (
+    <p className="text-green-600 text-center font-medium mb-3">
+      ✅ Message sent successfully!
+    </p>
+  )}
           <form onSubmit={handleSubmit}>
             <input
               type="email"
