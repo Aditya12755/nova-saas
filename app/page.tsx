@@ -50,6 +50,37 @@ export default function Home() {
       </div>
 
       {/* CONTACT SECTION */}
+<form
+  id="contact"
+  action="https://formspree.io/f/abcdwxyz"   // 👈 yaha apna real URL daalo
+  method="POST"
+  className="mt-20 bg-white text-black p-6 rounded-xl w-full max-w-md"
+>
+  <h2 className="text-center font-semibold mb-4">Contact</h2>
+
+  <input
+    type="email"
+    name="email"
+    required
+    className="w-full border p-2 mb-3 rounded"
+    placeholder="Your Email"
+  />
+
+  <textarea
+    name="message"
+    required
+    className="w-full border p-2 mb-3 rounded"
+    placeholder="Your Message"
+  />
+
+  <button
+    type="submit"
+    className="w-full bg-black text-white py-2 rounded hover:opacity-80"
+  >
+    Send Message
+  </button>
+</form>
+
       <div
         id="contact"
         className="mt-20 bg-white text-black p-6 rounded-xl w-full max-w-md"
