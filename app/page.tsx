@@ -20,7 +20,7 @@ export default function Home() {
       style={{ backgroundImage: "url('/hero-bg.png')" }}
     >
       {/* TOP LEFT NAME */}
-      <div className="fixed top-6 left-8 text-2xl font-extrabold tracking-[0.3em] animate-pulse">
+      <div className="fixed top-6 left-8 text-2xl font-extrabold tracking-[0.3em]">
         ADITYA
       </div>
 
@@ -35,72 +35,46 @@ export default function Home() {
       </nav>
 
       {/* HERO SECTION */}
-      <div
-        id="hero"
-        className="text-center max-w-2xl backdrop-blur-sm"
-      >
-        <p className="uppercase text-xs tracking-widest mb-3">
-          Time to meet
-        </p>
+      <div id="hero" className="text-center max-w-2xl backdrop-blur-sm">
+        <p className="uppercase text-xs tracking-widest mb-3">Time to meet</p>
         <h1 className="text-5xl font-extrabold mb-4">WELCOME</h1>
         <p className="text-gray-200">
-          Hi, I’m <b>Aditya Maurya</b>, a <b>QA Engineer</b> with experience
-          in Selenium automation, API testing, and manual testing.
+          Hi, I’m <b>Aditya Maurya</b>, a <b>QA Engineer</b> with experience in
+          Selenium automation, API testing, and manual testing.
         </p>
       </div>
 
-      {/* CONTACT SECTION */}
-<form
-  id="contact"
-  action="https://formspree.io/f/abcdwxyz"   // 👈 yaha apna real URL daalo
-  method="POST"
-  className="mt-20 bg-white text-black p-6 rounded-xl w-full max-w-md"
->
-  <h2 className="text-center font-semibold mb-4">Contact</h2>
-
-  <input
-    type="email"
-    name="email"
-    required
-    className="w-full border p-2 mb-3 rounded"
-    placeholder="Your Email"
-  />
-
-  <textarea
-    name="message"
-    required
-    className="w-full border p-2 mb-3 rounded"
-    placeholder="Your Message"
-  />
-
-  <button
-    type="submit"
-    className="w-full bg-black text-white py-2 rounded hover:opacity-80"
-  >
-    Send Message
-  </button>
-</form>
-
-      <div
+      {/* CONTACT FORM (ONLY ONE – WORKING) */}
+      <form
         id="contact"
+        action="https://formspree.io/f/xojnqwzw"
+        method="POST"
         className="mt-20 bg-white text-black p-6 rounded-xl w-full max-w-md"
       >
         <h2 className="text-center font-semibold mb-4">Contact Me</h2>
 
         <input
+          type="email"
+          name="email"
+          required
           className="w-full border p-2 mb-3 rounded"
           placeholder="Your Email"
         />
 
         <textarea
+          name="message"
+          required
           className="w-full border p-2 mb-3 rounded"
           placeholder="Your Message"
         />
 
-        <button className="w-full bg-black text-white py-2 rounded">
+        <button
+          type="submit"
+          className="w-full bg-black text-white py-2 rounded hover:opacity-80"
+        >
           Send Message
         </button>
-      </div>
+      </form>
     </main>
   );
 }
