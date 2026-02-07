@@ -1,10 +1,12 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 
 export default function Home() {
+  const [submitted, setSubmitted] = useState(false);
+
   useEffect(() => {
     gsap.from("#hero", {
       opacity: 0,
@@ -14,13 +16,33 @@ export default function Home() {
     });
   }, []);
 
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    const res = await fetch("https://formspree.io/f/xojnqwzw", {
+      method: "POST",
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    if (res.ok) {
+      setSubmitted(true);
+      form.reset();
+    }
+  }
+
   return (
     <main
       className="min-h-screen bg-cover bg-center flex flex-col items-center justify-center text-white px-4"
       style={{ backgroundImage: "url('/hero-bg.png')" }}
     >
       {/* TOP LEFT NAME */}
-      <div className="fixed top-6 left-8 text-2xl font-extrabold tracking-[0.3em]">
+      <div className="fixed top-6 left-8 text-2xl font-extrabold tracking-[0.3em] animate-pulse">
         ADITYA
       </div>
 
@@ -34,7 +56,7 @@ export default function Home() {
         </a>
       </nav>
 
-      {/* HERO SECTION */}
+      {/* HERO */}
       <div id="hero" className="text-center max-w-2xl backdrop-blur-sm">
         <p className="uppercase text-xs tracking-widest mb-3">Time to meet</p>
         <h1 className="text-5xl font-extrabold mb-4">WELCOME</h1>
@@ -44,14 +66,19 @@ export default function Home() {
         </p>
       </div>
 
-      {/* CONTACT FORM (ONLY ONE – WORKING) */}
+      {/* CONTACT FORM */}
       <form
         id="contact"
-        action="https://formspree.io/f/xojnqwzw"
-        method="POST"
+        onSubmit={handleSubmit}
         className="mt-20 bg-white text-black p-6 rounded-xl w-full max-w-md"
       >
         <h2 className="text-center font-semibold mb-4">Contact Me</h2>
+
+        {submitted && (
+          <p className="text-green-600 text-center mb-3">
+            ✅ Message sent successfully!
+          </p>
+        )}
 
         <input
           type="email"
