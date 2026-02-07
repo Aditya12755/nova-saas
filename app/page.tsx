@@ -84,43 +84,41 @@ export default function Home() {
         </div>
       </div>
 
-      {/* CONTACT */}
-      <div
-        id="contact"
-        className="mt-20 bg-white text-black p-6 rounded-xl w-full max-w-md"
-      >
-        <h2 className="text-center font-semibold mb-4">Contact Me</h2>
+     {/* CONTACT SECTION */}
+<div
+  id="contact"
+  className="mt-20 bg-white text-black p-6 rounded-xl w-full max-w-md"
+>
+  <h2 className="text-center font-semibold mb-4">Contact Me</h2>
 
-         {submitted && (
+  {submitted && (
     <p className="text-green-600 text-center font-medium mb-3">
       ✅ Message sent successfully!
     </p>
   )}
-          <form onSubmit={handleSubmit}>
-            <input
-              type="email"
-              name="email"
-              required
-              className="w-full border p-2 mb-3 rounded"
-              placeholder="Your Email"
-            />
 
-            <textarea
-              name="message"
-              required
-              className="w-full border p-2 mb-3 rounded"
-              placeholder="Your Message"
-            />
+  <form onSubmit={handleSubmit}>
+    <input
+      type="email"
+      name="email"
+      required
+      className="w-full border p-2 mb-3 rounded"
+      placeholder="Your Email"
+    />
 
-            <button
-              type="submit"
-              className="w-full bg-black text-white py-2 rounded"
-            >
-              Send Message
-            </button>
-          </form>
-        )}
-      </div>
-    </main>
-  );
-}
+    <textarea
+      name="message"
+      required
+      className="w-full border p-2 mb-3 rounded"
+      placeholder="Your Message"
+    />
+
+    <button
+      type="submit"
+      className="w-full bg-black text-white py-2 rounded hover:opacity-80"
+    >
+      Send Message
+    </button>
+  </form>
+</div>
+
